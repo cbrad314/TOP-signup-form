@@ -4,13 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Geniuses Share This Trait...</title>
+    <title>Loki Hates This Simple Trick</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <legend>test</legend>
-        <input type="text" name="firstname" id="firstname" value="name">
-    </form>
+        <div id="image-container">
+            <div id="logo-container">
+                <img id="logo" src="./images/odin-lined.png" alt="Odin Icon">
+                <span id="logo-text">ODIN</span>
+            </div>
+            <p id="image-credit">Photo by 
+                <a href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Halie West</a> 
+                on 
+                <a href="https://unsplash.com/photos/25xggax4bSA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </p>
+        </div>
+        <form id="right-container">
+            <div id="header">
+                <div>
+                    <p>This is not an actual online service! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti repudiandae mollitia quod sit eaque, soluta atque molestias magni est, quasi cumque, rem ratione. Molestiae, libero?</p>
+                    <p>Sign up for 2000% off!</p>
+                </div>
+            </div>
+            <section>
+                <legend>Let's Go!</legend>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="firstname">FIRST NAME</label><input type="text" name="firstname" id="firstname" placeholder="Thor" required minlength="2" maxlength="50">
+                    </div>
+                    <div class="form-input">
+                        <label for="lastname">LAST NAME</label><input type="text" name="lastname" id="lastname" placeholder="Odinson" required minlength="2" maxlength="50">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="ThorOdinson@valhalla.com">
+                    </div>
+                    <div class="form-input">
+                        <label for="phonenumber">PHONE NUMBER</label><input type="tel" name="phonenumber" id="phonenumber" minlength="9" maxlength="12">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="pw">PASSWORD</label><input type="password" name="pw" id="pw" required minlength="8" maxlength="35">
+                    </div>
+                    <div class="form-input">
+                        <label for="confirmpw">CONFIRM PASSWORD</label><input type="password" name="confirmpw" id="confirmpw" required minlength="8" maxlength="35">
+                    </div>
+                </div>
+                
+                
+                
+            </section>
+            <div id="footer">
+                <button type="submit">Create Account</button>
+                <p>Already have an account? <a href="http://google.com"> Login</a></p>
+            </div>
+        </form>
 </body>
 </html>
