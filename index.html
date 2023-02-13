@@ -29,27 +29,27 @@
             <section>
                 <legend>Let's Go!</legend>
                 <div class="form-row">
-                    <div class="form-input">
+                    <div class="form-input firstname">
                         <label for="firstname">FIRST NAME</label><input type="text" name="firstname" id="firstname" placeholder="Thor" required minlength="2" maxlength="50">
                     </div>
-                    <div class="form-input">
+                    <div class="form-input lastname">
                         <label for="lastname">LAST NAME</label><input type="text" name="lastname" id="lastname" placeholder="Odinson" required minlength="2" maxlength="50">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-input">
+                    <div class="form-input email">
                         <label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="ThorOdinson@valhalla.com">
                     </div>
-                    <div class="form-input">
-                        <label for="phonenumber">PHONE NUMBER</label><input type="tel" name="phonenumber" id="phonenumber" minlength="9" maxlength="12">
+                    <div class="form-input phonenumber">
+                        <label for="phonenumber">PHONE NUMBER</label><input type="tel" name="phonenumber" id="phonenumber" minlength="9" maxlength="12" placeholder="555-555-5555">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-input">
-                        <label for="pw">PASSWORD</label><input type="password" name="pw" id="pw" required minlength="8" maxlength="35">
+                    <div class="form-input password">
+                        <label for="pw">PASSWORD</label><input class="error" type="password" name="pw" id="pw" required minlength="8" maxlength="35">
                     </div>
-                    <div class="form-input">
-                        <label for="confirmpw">CONFIRM PASSWORD</label><input type="password" name="confirmpw" id="confirmpw" required minlength="8" maxlength="35">
+                    <div class="form-input pwconfirm">
+                        <label for="pwconfirm">CONFIRM PASSWORD</label><input class="error" type="password" name="pwconfirm" id="pwconfirm" required minlength="8" maxlength="35">
                     </div>
                 </div>
                 
@@ -61,5 +61,33 @@
                 <p>Already have an account? <a href="http://google.com"> Login</a></p>
             </div>
         </form>
+        <script>
+            const pw = document.getElementById('pw');
+            const pwConfirm = document.getElementById('pwconfirm');
+            const pwDiv = document.querySelector('.password');
+            const pwConfirmDiv = document.querySelector('.pwconfirm');
+
+            pw.addEventListener('input',validatePassword);
+            pwConfirm.addEventListener('input',validatePassword);
+
+            function validatePassword (event){
+                const thisValue = event.target.value;
+                const comparisonValue = (event.target.id === 'pw') ? pwconfirm.value: pw.value;
+
+                return thisValue === comparisonValue ? toggleValidationClass(true) : toggleValidationClass(false)//console.log('Passwords match') : console.log('Passwords do not match');
+            }
+
+
+            function toggleValidationClass(bool){
+                if(bool) {
+                    pwDiv.classList.remove('errormessage');
+                    pwConfirmDiv.classList.remove('errormessage');
+                }
+                else {
+                    pwDiv.classList.add('errormessage');
+                    pwConfirmDiv.classList.add('errormessage');
+                }
+            }
+        </script>
 </body>
 </html>

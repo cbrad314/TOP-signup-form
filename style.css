@@ -161,7 +161,11 @@ legend {
 .form-input * {
     padding: 3px 0px;
 }
-
+.form-input.errormessage::after{
+    color: red;
+    font-size: .7rem;
+    content:"Passwords do not match";
+}
 label {
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-size: .7rem;
@@ -183,10 +187,10 @@ label {
 
 #header>div {
     position: relative;
-    top:50%;
+    top:40%;
 }
 #header p {
-    padding-bottom:10px;
+    padding-top:25px;
     margin-right: 50px;
 }
 
@@ -194,10 +198,21 @@ label {
     color: #596d48;
     font-weight: bold;
 }
+
+input {
+    border: .5px solid #E5E7EB;
+    border-radius: 2px;
+}
+
 input:focus {
     outline: none;
-    border: 2px solid #596d48;
+    border: 1px solid blue;
     border-radius: 2px;
+    box-shadow: 0px 5px 3px -1px rgba(150, 150, 150, 0.452);
+}
+
+.error:invalid{
+    border:1px solid red;
 }
 button {
     padding: 12px 45px;
@@ -210,6 +225,15 @@ button {
     box-shadow: 0px 5px 3px -1px rgba(150, 150, 150, 0.452);
     border-radius: 4px;
     border: 0px;
+}
+
+ button:hover {
+    background-color: #465539;
+}
+
+button:active {
+    background-color: #2f3827;
+
 }
 
 @media (max-width: 1000px) {
